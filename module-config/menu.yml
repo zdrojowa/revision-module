@@ -1,0 +1,5 @@
+pages:
+  name: Moduł wersji
+  icon: mdi mdi-history
+  permission: RevisionModule.history
+  route: RevisionModule::index

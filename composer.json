@@ -1,0 +1,28 @@
+{
+    "name": "zdrojowa/revision-module",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alina Dawydowa",
+            "email": "a.dawydowa@zdrojowainvest.pl"
+        }
+    ],
+    "homepage": "https://github.com/zdrojowa/revision-module",
+    "keywords": ["RevisionModule", "Laravel", "mongo"],
+    "require": {
+        "zdrojowa/cms-kernel": "^2.0",
+        "zdrojowa/dashboardmodule": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Selene\\Modules\\RevisionModule\\": "src/"
+        }
+    }
+}

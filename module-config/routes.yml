@@ -1,0 +1,20 @@
+index:
+  path: /dashboard/history
+  controller: Selene\Modules\RevisionModule\Http\Controllers\RevisionController@index
+  methods:
+    - GET
+  permission: RevisionModule.history
+
+update:
+  path: /dashboard/history/update/{{revision}}
+  controller: Selene\Modules\RevisionModule\Http\Controllers\RevisionController@update
+  methods:
+    - POST
+  permission: RevisionModule.history
+
+destroy:
+  path: /dashboard/history/destroy/{{revision}}
+  controller: Selene\Modules\RevisionModule\Http\Controllers\RevisionController@destroy
+  methods:
+    - DELETE
+  permission: RevisionModule.history

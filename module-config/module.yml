@@ -1,0 +1,7 @@
+name: RevisionModule
+version: 1.0.0
+
+aclAnchor: RevisionModule
+aclName: Moduł wersji
+
+routePrefix: RevisionModule
