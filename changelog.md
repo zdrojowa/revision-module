@@ -7,3 +7,6 @@ All notable changes to `RevisionModule` will be documented in this file.
 
 ## Version 1.0.1
 - added auto action
+
+## Version 1.0.2
+- bugfix

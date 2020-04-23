@@ -61,11 +61,7 @@ Revision::create([
 - Dodaj w Controller
    
 ``` bash
-'revisions' => Revision::query()->where('table', '=', 'pages')
-    ->where('content_id', '=', $page->_id)
-    ->orderByDesc('_id')
-    ->limit(50)
-    ->get()
+'revisions' => Revision::getByContent('pages', $page->_id, 10)
 ```
 
 ## Change log

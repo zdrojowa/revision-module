@@ -29,14 +29,15 @@ class Revision extends Model
     {
         return $this->belongsTo(User::class);
     }
-    
+
     public static function getLastAuto($table, $contentId) {
         return Revision::query()->where('table', '=', $table)
             ->where('content_id', '=', $contentId)
+            ->where('action', '=', 'auto')
             ->orderByDesc('_id')
             ->first();
     }
-    
+
     public static function getByContent($table = null, $contentId = null, $limit = 10) {
         $revisions = self::query();
 
@@ -45,7 +46,7 @@ class Revision extends Model
         }
 
         if (!empty($contentId)) {
-            $revisions->where('contentId', '=', $contentId);
+            $revisions->where('content_id', '=', $contentId);
         }
 
         if (!empty($table) && !empty($contentId)) {
