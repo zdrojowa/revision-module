@@ -18,3 +18,11 @@ destroy:
   methods:
     - DELETE
   permission: RevisionModule.history
+
+get:
+  path: /dashboard/history/get
+  controller: Selene\Modules\RevisionModule\Http\Controllers\RevisionController@get
+  methods:
+    - GET
+    - POST
+  permission: RevisionModule.history

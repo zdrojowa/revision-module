@@ -13,7 +13,7 @@ class RevisionController extends Controller {
         $revisions = Revision::query()->orderByDesc('_id');
 
         return view('RevisionModule::index', [
-            'revisions' => $revisions->paginate(60, ['*'], 'page', $request->get('page') ?? 1)
+            'revisions' => $revisions->paginate(50, ['*'], 'page', $request->get('page') ?? 1)
         ]);
     }
 
@@ -44,5 +44,14 @@ class RevisionController extends Controller {
         } catch (\Exception $e) {
             $request->session()->flash('alert-error', 'Error: ' . $e->getMessage());
         }
+    }
+
+    public function get(Request $request) {
+
+        return response()->json(Revision::getByContent(
+            $request->get('table'),
+            $request->get('contentId'),
+            $request->get('limit', 10)
+        ));
     }
 }
