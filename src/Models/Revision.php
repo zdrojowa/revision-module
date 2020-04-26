@@ -38,7 +38,7 @@ class Revision extends Model
             ->first();
     }
 
-    public static function getByContent($table = null, $contentId = null, $limit = 10) {
+    public static function getByContent($table = null, $contentId = null, $limit = 10, $page = 1) {
         $revisions = self::query();
 
         if (!empty($table)) {
@@ -56,8 +56,8 @@ class Revision extends Model
             }
         }
 
-        return $revisions->limit($limit)
-            ->orderBy('_id', 'DESC')
-            ->get();
+        $revisions->orderByDesc('created_at');
+
+        return $revisions->paginate($limit, ['*'], 'page', $page);
     }
 }

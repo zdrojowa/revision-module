@@ -5,15 +5,16 @@ namespace Selene\Modules\RevisionModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Selene\Modules\RevisionModule\Models\Revision;
+use Zdrojowa\AuthenticationLink\Models\User;
 
 class RevisionController extends Controller {
 
     public function index(Request $request)
     {
-        $revisions = Revision::query()->orderByDesc('_id');
 
         return view('RevisionModule::index', [
-            'revisions' => $revisions->paginate(50, ['*'], 'page', $request->get('page') ?? 1)
+            'table'      => '',
+            'content_id' => ''
         ]);
     }
 
@@ -51,7 +52,12 @@ class RevisionController extends Controller {
         return response()->json(Revision::getByContent(
             $request->get('table'),
             $request->get('contentId'),
-            $request->get('limit', 10)
+            $request->get('limit') >> 0,
+            $request->get('page', 1) >> 0
         ));
+    }
+
+    public function getUsers() {
+        return response()->json(User::all(['id', 'name'])->pluck('name', 'id'));
     }
 }

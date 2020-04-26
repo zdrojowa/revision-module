@@ -3,7 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 Revisions & History
 
@@ -53,15 +52,17 @@ Revision::create([
 - Dodaj we view
 
 ``` bash
-@include('RevisionModule::revisions', [
-    'revisions' => $revisions ?? null
-])
-```
 
-- Dodaj w Controller
-   
-``` bash
-'revisions' => Revision::getByContent('pages', $page->_id, 10)
+<link rel="stylesheet" href="{{ mix('vendor/css/RevisionModule.css','') }}">
+
+@include('RevisionModule::revisions', [
+    'table'      => 'pages',
+    'content_id' => $page->id
+])
+
+@javascript('csrf', csrf_token())
+<script src="{{ mix('vendor/js/RevisionModule.js') }}"></script>
+    
 ```
 
 ## Change log
@@ -99,6 +100,5 @@ license. Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/zdrojowa/revision-module
 [link-downloads]: https://packagist.org/packages/zdrojowa/revision-module
 [link-travis]: https://travis-ci.org/zdrojowa/revision-module
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/zdrojowa
 [link-contributors]: ../../contributors

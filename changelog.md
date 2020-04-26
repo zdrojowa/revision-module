@@ -10,3 +10,6 @@ All notable changes to `RevisionModule` will be documented in this file.
 
 ## Version 1.0.2
 - bugfix
+
+## Version 1.1.0
+- pagination, ajax

@@ -1,0 +1,36 @@
+.revision--pagination {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: flex-end;
+
+    .revision--pagination-nav {
+        margin-bottom: 0px;
+        margin-left: 10px;
+
+        .revision-page-link {
+            border-radius: 0px;
+            font-size: 12px;
+            padding: 0.3rem 0.5rem;
+            color: #8489ab;
+
+            &.active {
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.revision--per-page {
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    select {
+        box-shadow: none;
+        border: none;
+        background: #2d2e31;
+        border-radius: 0;
+        color: #ffffff;
+    }
+}

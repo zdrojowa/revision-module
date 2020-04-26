@@ -4,6 +4,7 @@
 
 @section('stylesheets')
     @parent
+    <link rel="stylesheet" href="{{ mix('vendor/css/RevisionModule.css','') }}">
 @endsection
 
 @section('sidebar')
@@ -14,12 +15,7 @@
     <div class="content-wrapper" id="app">
         <div class="row">
             <div class="col-12">
-                @include('RevisionModule::revisions', [
-                    'revisions' => $revisions
-                ])
-                <div class="row mt-2 ml-5">
-                    {{ $revisions->links() }}
-                </div>
+                @include('RevisionModule::revisions')
             </div>
         </div>
     </div>

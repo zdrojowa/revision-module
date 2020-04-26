@@ -26,3 +26,10 @@ get:
     - GET
     - POST
   permission: RevisionModule.history
+
+getUsers:
+  path: /dashboard/users/get
+  controller: Selene\Modules\RevisionModule\Http\Controllers\RevisionController@getUsers
+  methods:
+    - GET
+  permission: RevisionModule.history
