@@ -132,7 +132,6 @@ $(document).ready(function(){
 
         Swal.fire({
             title: 'Na pewno chcesz to zrobić?',
-            text: 'Nie będzie można tego przywrócić!',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d53f3a',
@@ -149,7 +148,7 @@ $(document).ready(function(){
                 },
                 success: function () {
                     Swal.fire('Zrobione!', 'Akcja zakończyła się sukcesem', 'success');
-                    reload(page) ;
+                    location.reload();
                 },
                 error: function () {
                     Swal.fire('Wystąpił błąd!', 'Wystąpił błąd po stronie serwera', 'error');
